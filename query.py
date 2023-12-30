@@ -2,7 +2,6 @@ import nltk
 import streamlit as st
 from textblob import TextBlob
 from streamlit_option_menu import *
-from streamlit_extras.keyboard_url import keyboard_to_url
 from streamlit_extras.colored_header import colored_header
 import json as js
 import time
@@ -20,18 +19,18 @@ import pandas as pd
 class language_ai :
 
     def process(self):
-        st.set_page_config(page_title='Q&A Project By Praveen', layout="wide")
+        st.set_page_config(page_title='Q&A Project By Viswa', layout="wide")
         col1, col2, col3 = st.columns([2, 7, 1])
 
         col2.markdown(
-            "<h1 style='font-size: 80px;'><span style='color: cyan;'></span> <span style='color: cyan;'>Questioning </span><span style='color: white;'>Answering </span><span style='color: cyan;'> System</span> </h1>",
+            "<h1 style='font-size: 40px;'><span style='color: cyan;'></span> <span style='color: cyan;'>Questioning </span><span style='color: white;'>Answering </span><span style='color: cyan;'> System</span> </h1>",
             unsafe_allow_html=True)
         col2.write("")
         col2.write("")
         col2.write("")
         col2.write("")
         API_URL = "https://api-inference.huggingface.co/models/deepset/roberta-base-squad2"
-        headers = {"Authorization": "Bearer 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"}
+        headers = {"Authorization": "Bearer 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"}
 
         def query(payload):
             response = requests.post(API_URL, headers=headers, json=payload)
@@ -40,11 +39,11 @@ class language_ai :
         col1, col2, col3 = st.columns([1, 7, 1])
         with col2:
             st.markdown(
-                "<h1 style='font-size: 40px;'><span style='color: cyan;'>Provide </span> <span style='color: white;'>Context </span> </h1>",
+                "<h1 style='font-size: 30px;'><span style='color: cyan;'>Provide </span> <span style='color: white;'>Context </span> </h1>",
                 unsafe_allow_html=True)
             context = st.text_area("")
             st.markdown(
-                "<h1 style='font-size: 40px;'><span style='color: cyan;'>Provide </span> <span style='color: white;'>Question</span> </h1>",
+                "<h1 style='font-size: 30px;'><span style='color: cyan;'>Provide </span> <span style='color: white;'>Question</span> </h1>",
                 unsafe_allow_html=True)
             try:
                 question = st.text_input("")
@@ -56,7 +55,7 @@ class language_ai :
                         },
                     })
                     st.markdown(
-                        "<h1 style='font-size: 40px;'><span style='color: cyan;'>Result </span> <span style='color: white;'>:)</span> </h1>",
+                        "<h1 style='font-size: 30px;'><span style='color: cyan;'>Result </span> <span style='color: white;'>:)</span> </h1>",
                         unsafe_allow_html=True)
                     st.code(f'Question : {question} , Answer : {output["answer"]}')
 
