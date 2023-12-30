@@ -30,7 +30,7 @@ class language_ai :
         col2.write("")
         col2.write("")
         API_URL = "https://api-inference.huggingface.co/models/deepset/roberta-base-squad2"
-        headers = {"Authorization": "Bearer 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"}
+        headers = {"Authorization": "Bearer hf_fTIBTLGbeywooBbpjYJSyDZfCLiDqlFFF"}
 
         def query(payload):
             response = requests.post(API_URL, headers=headers, json=payload)
